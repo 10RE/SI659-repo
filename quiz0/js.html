@@ -1,0 +1,149 @@
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8">
+        <title>CodePen Demo</title>
+        <meta name="robots" content="noindex">
+        <style type="text/css">
+            body {
+                padding: 0;
+                margin: 0;
+                font-family: Arial;
+            }
+
+            #menu {
+                float: left;
+                background: #cfcfcf;
+                color: black;
+                margin: 0;
+                margin-right: 10px;
+                padding: 4px;
+                width: 150px;
+                border-right: 1px solid #666;
+            }
+
+            li {
+                padding: 4px;
+                border-bottom: 1px solid #666;
+                display: block;
+            }
+
+            li:hover {
+                background: #999;
+                color: white;
+                cursor: pointer;
+            }
+
+            #toggle-menu {
+                float: left;
+                background: blue;
+                color: white;
+                padding: 10px;
+                border-radius: 10px;
+                display: inline-block;
+                margin-top: 4px;
+                margin-left: 4px;
+                margin-right: 10px;
+            }
+
+            #toggle-menu:hover {
+                background: white;
+                color: blue;
+                cursor: pointer;
+            }
+
+            #toolbar {
+                background: #cfcfcf;
+                color: black;
+                padding-left: 550px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid #666;
+                cursor: pointer;
+            }
+
+            #dropdown-menu {
+                position: absolute;
+                display: none;
+            }
+
+            #dropdown-menu div {
+                padding: 4px;
+                background: #cfcfcf;
+                color: black;
+                border: 1px solid #666;
+            }
+
+            #dropdown-menu div:hover {
+                background: #999;
+                color: white;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu">
+            <li id="dashboard">Dashboard</li>
+            <li>Shortcuts</li>
+            <li>Overview</li>
+        </ul>
+
+        <div id="toggle-menu">Toggle Menu</div>
+
+        <div id="toolbar">
+            <span id="dropdown">Dropdown ⬇️</span>
+            <nav id="dropdown-menu">
+                <div>Menu Item 1</div>
+                <div>Menu Item 2</div>
+                <div>Menu Item 3</div>
+            </nav>
+        </div>
+    </body>
+    <script>
+        let isOnDropDownMenu = false;
+        let menu = document.querySelector("#menu");
+        let dashboard = document.querySelector("#dashboard");
+        let toggleMenu = document.querySelector("#toggle-menu");
+        let dropdown = document.querySelector("#dropdown");
+        let dropdownMenu = document.querySelector("#dropdown-menu");
+
+        dashboard.addEventListener("click", () => {
+            window.location.reload(true);
+        })
+
+        toggleMenu.addEventListener("click", () => {
+            if (menu.style.display === "none") {
+                menu.style.display = "inline";
+            }
+            else {
+                menu.style.display = "none";
+            }
+        });
+
+        dropdown.addEventListener("mouseenter", () => {
+            dropdownMenu.style.display = "inline";
+        })
+        
+        dropdown.addEventListener("mouseleave", () => {
+            if (!isOnDropDownMenu) {
+                setTimeout(() => {
+                    if (!isOnDropDownMenu) {
+                        dropdownMenu.style.display = "none";
+                    }
+                }, 500);
+            }
+        })
+
+        dropdownMenu.addEventListener("mouseenter", () => {
+            isOnDropDownMenu = true;
+        })
+        
+        dropdownMenu.addEventListener("mouseleave", () => {
+            isOnDropDownMenu = false;
+            setTimeout(() => {
+                if (!isOnDropDownMenu) {
+                    dropdownMenu.style.display = "none";
+                }
+            }, 500);
+        })
+    </script>
+</html>
