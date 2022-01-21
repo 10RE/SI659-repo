@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <!-- Model by Lada.Repina from https://sketchfab.com/models/041ff593cec544c19a2a37cc38c06194 -->
+                <a-asset-item id="window-model" src="./assets/scene.gltf"></a-asset-item>
+                <a-asset-item id="man-model" src="./assets/man/scene.gltf"></a-asset-item>
+                <a-asset-item id="mic-model" src="./assets/microphone/scene.gltf"></a-asset-item>
+                <a-asset-item id="tab-model" src="./assets/round_table_copy/scene.gltf"></a-asset-item>
+                <a-asset-item id="building-model" src="./assets/building/scene.gltf"></a-asset-item>
+                <img id="wood-mtl" src="./assets/wood1@0.1x.png" crossorigin="anonymous" />
+                <img id="wall-mtl" src="./assets/wallpaper.jpg" crossorigin="anonymous" />
+                <img id="sky" src="./assets/sky.jpg">
+            </a-assets>
+
+            <a-box position="0 0.035 -1.2457" color="#FFEFD9" shadow id="plateform" scale="3.44832 0.17 1.27" material="roughness: 1;"></a-box>
+
+            <a-plane position="0 0.3 -1.9" rotation="0 0 0" width="4"  height="4" color="#EEEEEE" shadow id="wall1_1" scale="1 0.15 1" material="roughness: 1;"></a-plane>
+
+            <a-plane src="#wood-mtl" position="0 0 1" rotation="-90 0 0" width="4"  height="4" color="#B5794E" shadow id="plane" scale="1 1.5 1" material="repeat: 10 10;; roughness: 0.71"></a-plane>
+            <!--
+                <a-plane position="0 1 -2" rotation="0 0 0" width="4"  height="4" color="#EEEEEE" shadow id="wall1" scale="1 0.5 1"></a-plane>
+            -->
+            <a-plane src="#wall-mtl" position="-2 1.5 1" rotation="0 90 0" width="4"  height="4" color="#B5794E" shadow id="wall2" scale="1.5 0.75 1" material="repeat: 20 20; roughness: 1;"></a-plane>
+            <a-plane position="-1.99 0.3 1" rotation="0 90 0" width="4"  height="4" color="#EEEEEE" shadow id="wall2_1" scale="1.5 0.15 1" material="repeat: 20 20; roughness: 1;"></a-plane>
+
+            <a-plane src="#wall-mtl" position="2 1.5 1" rotation="0 270 0" width="4"  height="4" color="#B5794E" shadow id="wall3" scale="1.5 0.75 1" material="repeat: 20 20; roughness: 1;"></a-plane>
+            <a-plane position="1.99 0.3 1" rotation="0 270 0" width="4"  height="4" color="#EEEEEE" shadow id="wall3_1" scale="1.5 0.15 1" material="repeat: 20 20; roughness: 1;"></a-plane>
+
+            <a-plane src="#wall-mtl" position="0 3 1" rotation="90 0 0" width="4"  height="4" color="#B5794E" shadow id="celling" scale="1 1.5 1" material="repeat: 20 20;"></a-plane>
+
+            <a-cylinder position="0 0.301 -0.932" rotation="0 180 180" width="4"  height="4" color="#111111" shadow id="stick" scale="0.02 0.15 0.02" geometry="radius: 0.4"></a-cylinder>
+
+            <!--
+                <a-entity id="rick" position="0 0.1 -1.2">
+                    <a-entity geometry="primitive: cone; radiusBottom: 0.1; radiusTop: 0.07" id="rickBody" position="0 0.25 0" material="color: #ef8f41" scale="1 0.5 1"></a-entity>
+                    <a-entity geometry="primitive: sphere;; skipCache: false" id="rickHead" position="0 0.60393 0" scale="0.1081 0.1081 0.1081" material="color: #e2df4e"></a-entity>
+                </a-entity>
+            
+            
+
+            <a-entity geometry="primitive: cylinder; height: 3.5; radius: 2" material="color: #888888" id="table1" position="-0.90397 0.25 0.12202" scale="0.13707 0.13707 0.13707"></a-entity>
+            <a-entity geometry="primitive: cylinder; height: 3.5; radius: 2" material="color: #888888" id="table2" position="1.00879 0.25 0.20137" scale="0.13707 0.13707 0.13707"></a-entity>
+            <a-entity geometry="primitive: cylinder; height: 3.5; radius: 2" material="color: #888888" id="table3" position="0.91715 0.25 1.240194" scale="0.13707 0.13707 0.13707"></a-entity>
+            <a-entity geometry="primitive: cylinder; height: 3.5; radius: 2" material="color: #888888" id="table4" position="-0.66377 0.25 1.241203" scale="0.13707 0.13707 0.13707"></a-entity>
+-->
+            <a-entity gltf-model="#tab-model" mtl="#wood-mtl" scale="0.5 0.5 0.5" rotation="0 0 0" position="-0.9 0.31 0.163" shadow></a-entity>
+            <a-entity gltf-model="#tab-model" scale="0.5 0.5 0.5" rotation="0 0 0" position="1.00879 0.31 0.20137" shadow></a-entity>
+            <a-entity gltf-model="#tab-model" scale="0.5 0.5 0.5" rotation="0 0 0" position="0.91715 0.31 1.240194" shadow></a-entity>
+            <a-entity gltf-model="#tab-model" scale="0.5 0.5 0.5" rotation="0 0 0" position="-0.66377 0.31 1.241203" shadow></a-entity>
+            <a-entity gltf-model="#tab-model" scale="0.5 0.5 0.5" rotation="0 0 0" position="1 0.31 2.44" shadow></a-entity>
+            <a-entity gltf-model="#tab-model" scale="0.5 0.5 0.5" rotation="0 0 0" position="-0.74 0.31 2.546" shadow></a-entity>
+
+            <a-entity gltf-model="#building-model" scale="1.4 1.4 1.4" rotation="0 0 0" position="-2.93 -2.29 -8.61" shadow></a-entity>
+            <a-entity gltf-model="#building-model" scale="1.4 1.4 1.4" rotation="0 0 0" position="0.92 -1.5 -8.61" shadow></a-entity>
+            <a-entity gltf-model="#building-model" scale="1.4 1.4 1.4" rotation="0 0 0" position="4.1 -2 -8.61" shadow></a-entity>
+            
+            <a-sky src="#sky"></a-sky>
+
+            <a-entity light="type: spot; color: #BBB; intensity: 0.81; shadowCameraVisible: false; castShadow: true; angle: 39.54" id="spotLight" rotation="-48.06141872895884 -151.7621959852768 -9.545476866879515" position="-1.65663 3.20488 -4.84227"></a-entity>
+            <a-entity light="type: spot; color: #BBB; intensity: 0.34; shadowCameraVisible: false; castShadow: true; angle: 30.46" id="spotLightInner" rotation="-45.14047988938191 -155.44917939694363 -7.339016397830715" position="-0.77651 2.62074 -1.99904"></a-entity>
+            <a-entity light="type: ambient; color: #BBB; intensity: 0.93; shadowCameraVisible: false; castShadow: true; angle: 45.93" id="mainLight" rotation="0 0 0" position="0 0 0"></a-entity>
+            <a-entity light="type: directional; color: #FFF; intensity: 0.6; shadowCameraBottom: 11.07; shadowBias: 0.92; penumbra: 0.47; shadowCameraFar: 300.39; castShadow: false; distance: 4.03; decay: 0.94; angle: 9.84; shadowCameraVisible: false; shadowCameraFov: 90.28; shadowCameraLeft: 0; shadowRadius: 1.81" position="-3.51577 5.3038 -9.1523" id="dirLight" rotation="-1.0651285411482003 -0.093965078401455 -1.7526778953051882"></a-entity>
+
+            <a-entity position="-1.08159 0.99262 -1.88019" text="value: Yipeng Lin; align: center; width: 4;" id="nameTag"></a-entity>
+            
+            <a-entity id="windows" position="0 -0.12 0" shadow>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 0 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 0 -1.9"shadow></a-entity>
+
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 0.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 0.5 -1.9"shadow></a-entity>
+                
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 1 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 1 -1.9"shadow></a-entity>
+
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 1.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 1.5 -1.9"shadow></a-entity>
+
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 2 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 2 -1.9"shadow></a-entity>
+
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.74 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-1.24 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.74 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="-0.24 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.24 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="0.74 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.244 2.5 -1.9"shadow></a-entity>
+                <a-entity gltf-model="#window-model" scale="0.01 0.01 0.01" rotation="0 60 0" position="1.74 2.5 -1.9"shadow></a-entity>
+
+            </a-entity>
+
+            <a-entity gltf-model="#man-model" scale="0.005 0.005 0.005" rotation="0 0 0" position="0 0.12 -1.2" shadow></a-entity>
+
+            <a-entity gltf-model="#mic-model" scale="0.0008 0.0008 0.0008" rotation="0 0 0" position="0 0.8 -0.95" shadow></a-entity>
+
+            <a-entity camera="fov: 50" look-controls position="1.314 1.073 2.612" rotation="0 25 0"></a-entity>
+            
+
+
+        </a-scene>
+    </body>
+</html>
